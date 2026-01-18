@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-gray-200 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+
+  /* Reusable Glass Card Class */
+  .glass-card {
+    @apply bg-dark-100/40 backdrop-blur-md border border-white/10 shadow-xl rounded-xl;
+  }
+
+  /* Neon Text Effect */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+
+  /* Neon Button */
+  .btn-neon {
+    @apply px-6 py-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(45deg, #00f3ff, #bc13fe);
+    color: white;
+  }
+
+  .btn-neon:hover {
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+    .prose p {
+      @apply mb-4 leading-relaxed;
+    }
+  
+    .prose h1,
+    .prose h2,
+    .prose h3 {
+      @apply mt-8 mb-4 font-bold text-white;
+    }
+  
+    .prose ul {
+      @apply list-disc list-inside mb-4 pl-4;
+    }
+  
+    .prose li {
+      @apply mb-1;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bc13fe;
+}
+
+
+
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+} */
