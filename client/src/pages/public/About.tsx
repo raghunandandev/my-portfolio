@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/layout/Navbar';
 import Timeline, { type TimelineItem } from '../../components/sections/Timeline';
-import Skills, { type Skill } from '../../components/sections/Skills';
+import Skills, { type Skill } from '../../components/sections/skills';
 import api from '../../services/api';
 import { ExternalLink, Award, Code, FileText, Download } from 'lucide-react';
 
