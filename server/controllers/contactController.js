@@ -12,12 +12,22 @@ const sendEmail = async (req, res) => {
 
     try {
         // 1. Create Transporter (Connection to Email Provider)
+        // const transporter = nodemailer.createTransport({
+        //     service: process.env.EMAIL_SERVICE, // e.g., 'gmail'
+        //     auth: {
+        //         user: process.env.EMAIL_USER, // Your email
+        //         pass: process.env.EMAIL_PASS, // Your App Password (Not your login password)
+        //     },
+        // });
+
         const transporter = nodemailer.createTransport({
-            service: process.env.EMAIL_SERVICE, // e.g., 'gmail'
+            host: 'smtp.gmail.com', // Explicit host
+            port: 465,              // Explicit port (SSL)
+            secure: true,           // true for 465, false for other ports
             auth: {
-                user: process.env.EMAIL_USER, // Your email
-                pass: process.env.EMAIL_PASS, // Your App Password (Not your login password)
-            },
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS // Make sure this variable matches Render
+            }
         });
 
         // 2. Define Email Options
