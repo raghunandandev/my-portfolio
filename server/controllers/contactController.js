@@ -42,7 +42,8 @@ const sendEmail = async (req, res) => {
             tls: {
                 ciphers: "SSLv3",      // Helpful for some cloud networks
                 rejectUnauthorized: false // (Optional) Helps avoid certificate errors in dev
-            }
+            },
+            family: 4               // Use IPv4, skip IPv6 - helps on some networks
         });
 
         // 2. Define Email Options
