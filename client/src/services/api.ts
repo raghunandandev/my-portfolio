@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.MODE === 'development' 
     ? 'http://localhost:5000/api' 
-    : 'https://your-backend-app.onrender.com/api';
+    : 'https://devraghunandan.onrender.com/api';
 
 // Create Axios instance
 // const api = axios.create({
