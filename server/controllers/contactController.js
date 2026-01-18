@@ -20,13 +20,28 @@ const sendEmail = async (req, res) => {
         //     },
         // });
 
+        // const transporter = nodemailer.createTransport({
+        //     host: 'smtp.gmail.com', // Explicit host
+        //     port: 465,              // Explicit port (SSL)
+        //     secure: true,           // true for 465, false for other ports
+        //     auth: {
+        //         user: process.env.EMAIL_USER,
+        //         pass: process.env.EMAIL_PASS // Make sure this variable matches Render
+        //     }
+        // });
+
         const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com', // Explicit host
-            port: 465,              // Explicit port (SSL)
-            secure: true,           // true for 465, false for other ports
+            service: 'gmail', // You can keep this, but explicit host is better
+            host: 'smtp.gmail.com',
+            port: 587,                 // 👈 CHANGE FROM 465 TO 587
+            secure: false,             // 👈 CHANGE FROM true TO false (true is only for 465)
             auth: {
                 user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS // Make sure this variable matches Render
+                pass: process.env.EMAIL_PASS
+            },
+            tls: {
+                ciphers: "SSLv3",      // Helpful for some cloud networks
+                rejectUnauthorized: false // (Optional) Helps avoid certificate errors in dev
             }
         });
 
