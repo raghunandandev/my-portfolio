@@ -16,15 +16,13 @@ const importData = async () => {
         // 2. Create the admin user
         // The password will be automatically hashed by your User model's 'pre-save' middleware
         const adminUser = new User({
-            username: 'admin',
-            password: 'password123' // CHANGE THIS TO YOUR DESIRED STRONG PASSWORD
+            username: 'your-admin-username',
+            password: 'your-password' // CHANGE THIS TO YOUR DESIRED STRONG PASSWORD
         });
 
         await adminUser.save();
 
-        console.log('✅ Admin User Created Successfully!');
-        console.log('Username: admin');
-        console.log('Password: password123'); // Remember to delete this log in production
+       
         process.exit();
 
     } catch (error) {
